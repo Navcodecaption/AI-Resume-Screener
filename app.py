@@ -79,19 +79,21 @@ def main() -> None:
         st.subheader("⚙️ Custom Weights")
         
         # Help tooltip
-        with st.expander("ℹ️ Weights Kya Hain?"):
+        with st.expander("ℹ️ What are Weights?"):
             st.markdown("""
-            **Weights = Har factor ko kitna importance do**
-            
-            - **0.0** = Is factor ko ignore karo
-            - **1.0** = Maximum importance
-            - **0.5** = Medium importance
-            
-            **Example:**
-            - Senior role ke liye Experience ko zyada weight do (0.3-0.4)
-            - Entry level ke liye Keywords ko zyada weight do (0.4-0.5)
-            - Cloud jobs ke liye Certifications ko zyada weight do (0.2-0.3)
-            """)
+        **Weights = How much importance each factor gets**
+        
+        - **0.0** = Ignore this factor
+        - **1.0** = Maximum importance
+        - **0.5** = Medium importance
+          
+        **Example:**
+        - Senior roles → Give more weight to Experience (0.3–0.4)
+        - Entry-level roles → Give more weight to Keywords (0.4–0.5)
+        - Cloud jobs → Give more weight to Certifications (0.2–0.3)
+        """)
+       
+        
         
         weight_similarity = st.slider(
             "Semantic Similarity", 
@@ -99,7 +101,7 @@ def main() -> None:
             default_weights["similarity"], 
             0.05,
             key="weight_similarity",
-            help="Meaning-based similarity (JD aur resume ka overall match)"
+            help="Meaning-based similarity (overall match between the job description and resume )"
         )
         weight_keywords = st.slider(
             "Keyword Coverage", 
@@ -107,7 +109,7 @@ def main() -> None:
             default_weights["keywords"], 
             0.05,
             key="weight_keywords",
-            help="Exact skill keywords ka match (Python, AWS, etc.)"
+            help="Exact skill keywords match (Python, AWS, etc.)"
         )
         weight_experience = st.slider(
             "Experience Match", 
@@ -115,7 +117,7 @@ def main() -> None:
             default_weights["experience"], 
             0.05,
             key="weight_experience",
-            help="Years of experience ka match (JD requirement vs resume)"
+            help="Years of experience match (JD requirement vs resume)"
         )
         weight_education = st.slider(
             "Education Match", 
@@ -123,7 +125,7 @@ def main() -> None:
             default_weights["education"], 
             0.05,
             key="weight_education",
-            help="Degree level ka match (PhD, Masters, Bachelors)"
+            help="Degree level  match (PhD, Masters, Bachelors)"
         )
         weight_certifications = st.slider(
             "Certifications", 
@@ -131,7 +133,7 @@ def main() -> None:
             default_weights["certs"], 
             0.05,
             key="weight_certifications",
-            help="Certifications ka relevance (AWS, Azure, PMP, etc.)"
+            help="Certifications relevance (AWS, Azure, PMP, etc.)"
         )
         
         # Update session state when sliders change
