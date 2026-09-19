@@ -19,6 +19,18 @@ from src.scoring import compute_scores
 
 st.set_page_config(page_title="AI Resume Screener", layout="wide")
 
+st.markdown("""
+<style>
+.stApp {
+    background-color: #F5F7FA;
+}
+
+section[data-testid="stSidebar"] {
+    background-color: #E8EEF7;
+}
+</style>
+""", unsafe_allow_html=True)
+
 
 @st.cache_resource(show_spinner=False)
 def load_embedder():

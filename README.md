@@ -172,7 +172,7 @@ This project is licensed under the MIT License.
 
 ## 👤 Author
 
-Created with "NAVEEN KUMAR SALLA" for efficient resume screening
+Created by "NAVEEN KUMAR SALLA" 
 
 ---
 
